@@ -17,6 +17,7 @@ public class BattleshipPlayerComputer extends BattleshipPlayer {
      */
     private String name;
     private BattleshipGrid grid;
+    // tracking if all spots are hit
     private int spots;
 
     /**

@@ -53,5 +53,4 @@ public class BattleshipGame {
 
         return turns-1;
     }
-
 }

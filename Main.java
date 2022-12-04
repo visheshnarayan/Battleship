@@ -14,7 +14,7 @@ public class Main {
     public static void main(String [] args) {
         /**
          * Evaluator
-         * 100 runs
+         * 1000 runs
          */
         PlayerEvaluator eval = new PlayerEvaluator();
         System.out.println("max::"+eval.maxTurns());

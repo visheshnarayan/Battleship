@@ -68,7 +68,6 @@ public class Ocean {
         if (orientation.equals("vertical")) {
             for (int i = row; i < row+boat.getSize(); i++) {
                 if (board[i][column]!=null) {
-                    // System.out.println(("Placing boat at " + pos + " will overlap with boat at " + board[i][column].getPosition() + ", try another spot."));
                     return;
                 }
             }
@@ -78,7 +77,6 @@ public class Ocean {
         } else {
             for (int i = column; i > column-boat.getSize(); i--) {
                 if (board[row][i]!=null) {
-                    // System.out.println(("Placing boat at " + pos + " will overlap with boat at " + board[row][i].getPosition() + ", try another spot."));
                     return;
                 }
             }
@@ -130,8 +128,6 @@ public class Ocean {
                 } catch (Exception IndexOutOfBoundsException) {}
             }
         }
-        // System.out.println("Board: ");
-        // showBoard();
     }
 
     /**
@@ -194,11 +190,6 @@ public class Ocean {
      * @return true if all boats are sunk; false otherwise
      */
     public boolean allSunk() {
-        // for (Boat boat: boats) {
-        //     if (!boat.sunk()) {
-        //         return false;
-        //     }
-        // }
         return hitNum==hits.size();
     }
 }

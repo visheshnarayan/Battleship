@@ -69,6 +69,11 @@ public class Position {
         return (column() - 1);
     }
 
+    /**
+     * toString()
+     * outputted String when attempting to print object
+     * @return String
+     */
     public String toString() {
         String pos = this.row + "-" + this.column;
         return pos;
