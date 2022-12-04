@@ -45,8 +45,10 @@ public class PlayerEvaluator {
 
             // output formatting 
             if (run < 10) {
-                System.out.println("Run " + run + "   ===> " + turns + " turns");    
-            } else if (run >= 10 && run != 100) {
+                System.out.println("Run " + run + "    ===> " + turns + " turns");    
+            } else if (run >= 10 && run < 100) {
+                System.out.println("Run " + run + "   ===> " + turns + " turns");
+            } else if (run >= 100 && run < 1000){
                 System.out.println("Run " + run + "  ===> " + turns + " turns");
             } else {
                 System.out.println("Run " + run + " ===> " + turns + " turns");
