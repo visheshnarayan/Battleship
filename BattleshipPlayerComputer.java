@@ -3,7 +3,9 @@
  * @author Vishesh Narayan
  * @version 12/2/22
  * -----------------------------------------------------------
- * BattleshipPlayerComputer class to simulate computer 
+ * BattleshipPlayerComputer class for testing game
+ * BattleshipPlayer child class
+ * Used with PlayerEvaluator.java to automate testing
  * -----------------------------------------------------------
  * Creates BattleshipPlayerComputer object
  * -----------------------------------------------------------
