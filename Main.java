@@ -12,14 +12,13 @@
 public class Main {
     
     public static void main(String [] args) {
-        // evaluator 
+        /**
+         * Evaluator
+         * 100 runs
+         */
         PlayerEvaluator eval = new PlayerEvaluator();
-
-        for (int i = 0; i < 5; i++) {
-            System.out.println("max::"+eval.maxTurns());
-            System.out.println("min::"+eval.minTurns());
-            System.out.println("max::"+eval.averageTurns());
-        }
-
+        System.out.println("max::"+eval.maxTurns());
+        System.out.println("min::"+eval.minTurns());
+        System.out.println("average::"+eval.averageTurns());
     }
 }

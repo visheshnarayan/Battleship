@@ -40,10 +40,10 @@ public class BattleshipGame {
         boolean game = true;
         boolean tooMany = false;
         while (game) {
-            Position pos = player.shoot(); // where i shot at, shot saved
-            ocean.shootAt(pos); // send shot to ocean for eval
+            Position pos = player.shoot();
+            ocean.shootAt(pos);
             boolean hit = ocean.hit(pos); 
-            if (turns == 100) {
+            if (ocean.allSunk() || turns == 100) {
                 game = false;
                 tooMany = true;
             }
@@ -51,7 +51,7 @@ public class BattleshipGame {
             turns+=1;
         }
 
-        return turns;
+        return turns-1;
     }
 
 }

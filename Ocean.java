@@ -19,8 +19,8 @@ public class Ocean {
      */
     private Boat board[][];
     private ArrayList<Boat> boats;
-    // private ArrayList<Position> hits = new ArrayList<Position>();
     private ArrayList<String> hits = new ArrayList<String>();
+    private int hitNum;
 
     /**
      * Constructor
@@ -28,6 +28,7 @@ public class Ocean {
     public Ocean() {
         board = new Boat[10][10];
         boats = new ArrayList<Boat>();
+        hitNum = 0;
     }
 
     /**
@@ -85,6 +86,7 @@ public class Ocean {
                 board[row][i] = boat;
             }
         }
+        hitNum += boat.getSize();
         boats.add(boat);
     }
 
@@ -192,11 +194,11 @@ public class Ocean {
      * @return true if all boats are sunk; false otherwise
      */
     public boolean allSunk() {
-        for (Boat boat: boats) {
-            if (!boat.sunk()) {
-                return false;
-            }
-        }
-        return true;
+        // for (Boat boat: boats) {
+        //     if (!boat.sunk()) {
+        //         return false;
+        //     }
+        // }
+        return hitNum==hits.size();
     }
 }

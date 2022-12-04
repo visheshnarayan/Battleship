@@ -15,8 +15,9 @@ public class BattleshipPlayerComputer extends BattleshipPlayer {
     /**
      * private vars
      */
-    private String name = "AI from AI Club";
+    private String name;
     private BattleshipGrid grid;
+    private int spots;
 
     /**
      * {@inheritDoc}
@@ -29,6 +30,8 @@ public class BattleshipPlayerComputer extends BattleshipPlayer {
      * CHILD CLASS DIFFERENCE::does not ask player name
      */
     public void startGame() {
+        name = "AI (from AI Club)";
+        this.spots = 0;
         this.grid = new BattleshipGrid();
     }
 
@@ -43,6 +46,13 @@ public class BattleshipPlayerComputer extends BattleshipPlayer {
     /**
      * {@inheritDoc}
      */
+    protected void updateGrid(Position pos, boolean hit, char initial) {
+        grid.shotAt(pos, hit, initial);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public String playerName() {
         return this.name;
     }
@@ -52,15 +62,22 @@ public class BattleshipPlayerComputer extends BattleshipPlayer {
      * CHILD CLASS DIFFERENCE::randomly chooses positions until empty spot is found
      */
     public Position shoot() {
-        // initialize position
         Position pos;
-
+        
         // repeatedly create position until empty spot is found
+        spots++;
         do {
-            int row = (int) (Math.random()*10 + 0.5);
-            int column = (int) (Math.random()*10 + 0.5);
+            int row = (int) (Math.random()*10 + 1);
+            int column = (int) (Math.random()*10 + 1);
             pos = new Position(row, column);
-        } while (!grid.empty(pos));
+        } while (!grid.empty(pos) && spots < 100);
         return pos;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void updatePlayer(Position pos, boolean hit, char initial, String boatName, boolean sunk, boolean gameOver, boolean tooManyTurns, int turns) {
+        updateGrid(pos, hit, initial);
     }
 }
