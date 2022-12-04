@@ -51,6 +51,7 @@ public class BattleshipGame {
             turns+=1;
         }
 
+        // -1 because max runs were displayed 101
         return turns-1;
     }
 }
